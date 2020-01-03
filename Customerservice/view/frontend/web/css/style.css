@@ -1,0 +1,54 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.services-list {margin: 40px 0;}
+.services-list .title-block {display: inline-block; width: 100%;}
+.services-list .title-block .inner {text-align: center;max-width: 1000px;margin: auto;}
+.services-list .title-block h2 {font-size: 45px; letter-spacing: -1.2px;line-height: 45px;font-weight: normal;margin: 0 0 12px 0;}
+.services-list .title-block span {display: block;opacity: 0.3;font-size: 18px;line-height: 22px;margin: 0;}
+.services-list .cs-tab-section {border-top: 1px solid #e7e7e7;border-bottom: 1px solid #e7e7e7;padding: 70px 0;margin: 70px 0;}
+.services-list .cs-tab-section ul {-ms-box-orient: horizontal;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -moz-flex;display: -webkit-flex;display: flex;-webkit-flex-flow: row wrap;flex-flow: row wrap; margin: 0; padding: 0; list-style: none;}
+.services-list .cs-tab-section ul li {width: 25%;margin: 0 -2px -2px 0;border: 2px solid #eaebed;min-height: 250px; -webkit-transition: all .5s;transition: all .5s;}
+.services-list .cs-tab-section ul li a {display: block;width: 100%;height: 100%; text-decoration: none;}
+.services-list .cs-tab-section ul li a .inner {-ms-box-orient: horizontal;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -moz-flex;display: -webkit-flex;display: flex;height: 100%;align-items: center;justify-content: center;-webkit-flex-flow: row wrap;flex-flow: row wrap;padding: 35px 20px;}
+.services-list .cs-tab-section ul li a .inner .image {min-height: 70px;width: 100%;text-align: center;-moz-transform: scale(1); -webkit-transform: scale(1);transform: scale(1);-webkit-transition: all .5s;transition: all .5s;}
+.services-list .cs-tab-section ul li a .inner .image img {display: block;margin: auto;max-height: 70px; width: 100%;}
+.services-list .cs-tab-section ul li a .inner .service-name {font-size: 22px;font-weight: bold;line-height: 25px;text-align: center; margin: 0; color: #16171b; text-transform: capitalize;}
+.services-list .cs-tab-section ul li:hover a .inner .image {-moz-transform: scale(1.1); -webkit-transform: scale(1.1);transform: scale(1.1);}
+.services-list .cs-tab-section ul li:hover {background: #eaebed;}
+
+.cs-detail-view {margin: 70px 0;}
+.cs-detail-view .tabs {float: left;width: 100%;display: block; padding: 0;margin: 0 0 50px 0;list-style: none;}
+.cs-detail-view .tabs li {float: left;margin: 0 -2px -2px 0;font-size: 12px;font-weight: bold;line-height: 20px;text-align: center;padding: 16px 25px;border: 2px solid #eaebed;cursor: pointer;width: auto;white-space: nowrap; display: inline-block;}
+.cs-detail-view .tabs li.current {background: #eaebed;border-color: #eaebed;}
+.cs-detail-view .tab-content {border: none;display: none;clear: both;}
+.cs-detail-view .tab-content.current {display: block;}
+.cs-detail-view .tab-content h3 {color: #16171b;}
+.cs-detail-view .tab-content p {color: #818181;font-size: 16px;font-weight: 500;letter-spacing: 0.44px;line-height: 34px;margin-bottom: 25px;}
+
+@media screen and (max-width: 1024px) {
+	.services-list .cs-tab-section ul li {width: 33.33%;}
+}
+@media screen and (max-width: 991px) {
+	.services-list .cs-tab-section ul li {width: 50%;}
+	.cs-detail-view .tabs li {padding: 14px 20px;}
+}
+@media screen and (max-width: 767px) {
+	.services-list {margin: 30px 0;}
+	.services-list .title-block h2 {font-size: 30px;line-height: 35px; margin: 0 0 5px 0;}
+	.services-list .title-block span {font-size: 16px; line-height: 20px;}
+	.services-list .cs-tab-section {padding: 50px 0; margin: 50px 0;}
+	.services-list .cs-tab-section ul li {min-height: 180px;}
+	.services-list .cs-tab-section ul li a .inner {padding: 20px 15px;}
+	.services-list .cs-tab-section ul li a .inner .image {min-height: 50px;}
+	.services-list .cs-tab-section ul li a .inner .image img {max-height: 50px;}
+	.services-list .cs-tab-section ul li a .inner .service-name {font-size: 18px; font-weight: 600; line-height: 20px;}
+	.cs-detail-view {margin: 40px 0;}
+	.cs-detail-view .tabs li {padding: 10px 16px;}
+	.cs-detail-view .tab-content p {font-size: 14px; letter-spacing: normal; line-height: 28px;}
+}
+@media screen and (max-width: 480px) {
+	.services-list .cs-tab-section ul li {width: 100%;}
+}

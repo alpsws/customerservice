@@ -1,0 +1,27 @@
+<?php /** @var \Alps\Kiyoh\Block\Kiyoh $block */
+$data = $block->getCustomerserviceCollection(); ?>
+<section class="services-list">
+	<div class="title-block">
+		<div class="inner">
+	       <h2><?= __("Customer service") ?></h2>
+	       <span><?= __("How can we help you?") ?></span>
+	    </div>
+	</div>
+	<div class="cs-tab-section">
+		<ul>
+			<?php foreach($data as $row){ ?>
+				<li>
+					<a class="item" id = "<?php echo $row->getUrl() ; ?>" href="<?php echo $this->getCustomerServiceViewUrl($row->getUrl());?>">
+						<div class="inner">
+						    <div class="image">
+								<img src="<?php echo $this->getItemIcon($row->getIcon());  ?>"/>
+							</div>
+							<h4 class="service-name"><?php echo $row->getTitle(); ?></h4>
+							<?php /*<span class="custom-customerservice"><?php echo __('More information'); ?></span>*/?>
+						</div>
+					</a>
+				</li>
+			<?php } ?> 
+		</ul>
+	</div>
+</section>

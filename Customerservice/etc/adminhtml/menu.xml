@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Alps_Customerservice::customerservice" title="Customer Service" module="Alps_Customerservice" sortOrder="51" resource="Alps_Customerservice::customerservice"/>
+        <add id="Alps_Customerservice::add_row" title="Manage Customer Service" module="Alps_Customerservice" sortOrder="10" action="customerservice/customerservice" resource="Alps_Customerservice::add_row" parent="Alps_Customerservice::customerservice"/>
+    </menu>
+</config>

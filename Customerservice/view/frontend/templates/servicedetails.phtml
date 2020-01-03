@@ -1,0 +1,54 @@
+<?php 
+$words = explode('/', $_SERVER['REQUEST_URI']);
+$geturl = end($words); ?>
+<div class="container">
+	<div class="cs-detail-view">
+	<ul class="tabs">
+		<?php $data = $block->getCustomerserviceCollection();	
+		foreach($data as $row){	?>						
+					<li class="tab-link <?php if($geturl == $row->getUrl()){echo 'current';} ?>" id = "<?= $row->getUrl() ; ?>" data-tab="<?= trim(str_replace(" ",'-',$row->getTitle())); ?>">						
+						<?= $row->getTitle(); ?>						
+					</li>
+			<?php } ?>
+	</ul>	
+	<?php
+	foreach($data as $row){	?>
+			<div id="<?php echo trim(str_replace(" ",'-',$row->getTitle())); ?>" class="tab-content <?php if( $geturl == $row->getUrl()){echo 'current';} ?>">
+				<?= $row->getContent(); ?>
+			</div>		
+<?php } ?>
+	</div>
+</div>
+
+<script type="text/javascript">
+require([
+'jquery'
+], function ($) {
+    jQuery(document).ready(function(){
+
+	    if(!jQuery(".cs-detail-view .tabs li,.tab-content").hasClass("current")){
+	    	jQuery(".cs-detail-view .tabs li:first,.tab-content:first").addClass("current");
+	 	}	
+			jQuery("ul.tabs li").on("click", function(){
+			var url = jQuery(this).attr('id');
+			window.history.replaceState('page', 'Title', url);
+			var tab_id = jQuery(this).attr('data-tab');		
+			jQuery('ul.tabs li').removeClass('current');
+			jQuery('.tab-content').removeClass('current');
+			jQuery(this).addClass('current');
+			jQuery("#"+tab_id).addClass('current');
+		});
+
+        jQuery("ul.cs-tabs-slider li").on("click", function(){
+            var tab_id = jQuery(this).attr('data-tab');     
+            jQuery('ul.cs-tabs-slider li').removeClass('current');
+            jQuery('.tab-content').removeClass('current');
+            jQuery(this).addClass('current');
+            jQuery("#"+tab_id).addClass('current');
+        });
+
+		
+	});
+});
+
+</script>
